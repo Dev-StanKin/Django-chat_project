@@ -8,13 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .models import Room, Topic, Message
 from .forms import RoomForm
-# Create your views here.
 
-# rooms = [
-#     {'id':1, 'name': 'Lets learn python!'},
-#     {'id': 2, 'name': 'Front-end developers'},
-#     {'id': 3, 'name': 'AWS Certified'},
-# ]
 
 def loginPage(request):
     page = 'login'
@@ -64,7 +58,7 @@ def registerUser(request):
 
 def userProfle(request, pk):
     user = User.objects.get(id=pk)
-    
+
     context = {'user': user}
     return render(request, 'base/userProfile.html', context)
 
