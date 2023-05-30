@@ -1,0 +1,7 @@
+{% extends 'main.html' %} {% block content %}
+
+<h1>{{user.username}}</h1>
+
+<a href="{% url 'user-profile' room.host.id %}">{{user}}</a>
+
+{% endblock %}
