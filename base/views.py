@@ -58,8 +58,10 @@ def registerUser(request):
 
 def userProfle(request, pk):
     user = User.objects.get(id=pk)
-
-    context = {'user': user}
+    rooms = user.room_set.all()
+    topics  = Topic.objects.all()
+    room_messages = user.message_set.all()
+    context = {'user': user, 'rooms': rooms, 'topics': topics, 'room_messages': room_messages}
     return render(request, 'base/userProfile.html', context)
 
 def home(request):
@@ -97,7 +99,9 @@ def createRoom(request):
     if request.method == 'POST':
         form = RoomForm(request.POST)
         if form.is_valid:
-            form.save()
+            room = form.save(commit='False')
+            room.host = request.user
+            room.save()
             return redirect('home')
     context = {'form' : form}
     return render(request, 'base/room_form.html', context)

@@ -8,13 +8,13 @@
 </style>
 
 <div class="home-container">
-  {% include 'topic_component.html' %}
+  <div>{% include 'base/topic_component.html' %}</div>
   <div>
     <h5>{{room_count}} rooms available</h5>
     <a href="{% url 'create-room' %}">Create room</a>
-    {% include 'feed_component.html' %}
+    {% include 'base/feed_component.html' %}
   </div>
-  <div>{% include 'activity_component.html' %}</div>
+  <div>{% include 'base/activity_component.html' %}</div>
 </div>
 
 {% endblock %}
