@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "studybud/wsgi.py",
+      "src": "DJANGO-CHAT_PROJECT/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }
@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "studybud/wsgi.py"
+      "dest": "DJANGO-CHAT/wsgi.py"
     }
   ]
 }
