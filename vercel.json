@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "DJANGO-CHAT/wsgi.py"
+      "dest": "DJANGO-CHAT_PROJECT/wsgi.py"
     }
   ]
 }
